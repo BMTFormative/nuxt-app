@@ -3,7 +3,7 @@
     <div>
       <ul>
         <li v-for="user in users" :key="user.id">
-          {{ user.title }} - 
+          {{ user.name }} - 
           
           <nuxt-link :to="`/edit/${user.id}`"> Edit </nuxt-link>
           <button @click="deleteUser(user.id)">Delete</button>
@@ -22,7 +22,7 @@
   const router = useRouter();
   
   onMounted(async () => {
-    const response = await fetch('http://localhost:8000/api/todos');
+    const response = await fetch('http://localhost:3000/supplier');
     console.log(response)
     const data = await response.json();
     console.log(data)
@@ -35,7 +35,7 @@
   };
   
   const deleteUser = async (id) => {
-    await fetch(`http://localhost:8000/api/todos/${id}`, {
+    await fetch(` http://localhost:3000/supplier/${id}`, {
       method: 'DELETE',
     });
     userStore.deleteUser(id);

@@ -3,8 +3,12 @@
    <div>
     <h1>Edit User</h1>
     <label>
-      Title:
-      <input v-model="userToEdit.title" />
+      name:
+      <input v-model="userToEdit.name" />
+    </label>
+    <label>
+      contact:
+      <input v-model="userToEdit.contact" />
     </label>
     <button @click="saveUser">Save</button>
   </div>
@@ -26,7 +30,7 @@ const userToEdit = ref({});
 
 onMounted(async () => {
   // Fetch the user data for editing here
-  const response = await fetch(`http://localhost:8000/api/todos/${userId}`);
+  const response = await fetch(`http://localhost:3000/supplier/${userId}`);
   console.log(response)
   const data = await response.json();
   userToEdit.value = data;
@@ -36,7 +40,7 @@ const saveUser = async () => {
 };
 // Function to update the user
 const updateUser = async (updatedUser) => {
-  await fetch(`http://localhost:8000/api/todos/${userId}`, {
+  await fetch(`http://localhost:3000/supplier/${userId}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

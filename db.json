@@ -1,0 +1,32 @@
+{
+  "supplier": [
+    {
+      "id": 1,
+      "name": "supplier one",
+      "contact": "contact one",
+      "adress": "the firsy address"
+    },
+    {
+      "id": 2,
+      "name": "supplier two",
+      "contact": "contact two",
+      "adress": "the second address"
+    },
+    {
+      "id": 3,
+      "name": "supplier three",
+      "contact": "contact three",
+      "adress": "the third adress"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
